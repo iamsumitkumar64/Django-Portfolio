@@ -133,10 +133,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')  # This is where collectstatic will collect static files
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')   # This is where collectstatic will collect static files
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'statcfiles_dirs' ,'static'),  # This should not include STATIC_ROOT
+    os.path.join(BASE_DIR,'static'),  # This should not include STATIC_ROOT
 ]
 
 # Default primary key field type
