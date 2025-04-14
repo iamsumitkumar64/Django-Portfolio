@@ -17,14 +17,25 @@ body {
     color: white;
 }
 
+button {
+    padding: .5vmax;
+    border-radius: 1vmax;
+}
+
+#mode {
+    cursor: grab;
+}
+
 header {
-    /* box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.5); */
+    background-color: rgb(1, 0, 26);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     box-shadow: 4px 4px 4px rgb(160, 255, 131);
 }
 
 header>img {
-    width: 20vmin;
-    border-radius: 100%;
+    width: 15vmin;
 }
 
 header,
@@ -59,7 +70,7 @@ header>div>nav>a {
 }
 
 header>div>nav>a:hover {
-    color: rgb(0, 217, 255);
+    color: yellow;
 }
 
 header>div>img {
@@ -70,40 +81,50 @@ header>div>img {
 }
 
 aside>nav {
-    /* position: absolute; */
-    left: .8%;
-    bottom: 0;
     position: fixed;
+    left: 1.5%;
+    bottom: 2%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-aside>nav>a>img:hover {
-    filter: brightness(0.5) saturate(100%) invert(100%) sepia(100%) saturate(1000%) hue-rotate(0deg) brightness(100%) contrast(100%);
+aside>nav>a {
+    position: relative;
+    /* display: block; */
 }
 
 aside>nav>a>img {
-    width: 7vmin;
-    /* height: 3vmax; */
+    width: 6vmin;
+    height: auto;
     cursor: pointer;
-    margin-top: 3%;
     filter: invert(100%);
-    position: relative;
+    transition: filter 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+aside>nav>a>img:hover {
+    transform: scale(1.4);
 }
 
 aside>nav>a>p {
-    color: red;
     font-weight: bold;
     position: absolute;
-    left: 10vmin;
-    top: 10vmin;
-    transition: 1s ease;
-    pointer-events: none;
+    color: yellow;
+    left: 7vmin;
+    bottom: 0%;
+    white-space: nowrap;
     opacity: 0;
+    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
+    pointer-events: none;
+    background-color: #333;
+    font-size: .7rem;
+    border-radius: 2vmax;
+    padding: 0.5rem 1rem;
 }
 
 aside>nav>a>img:hover+p {
     opacity: 1;
+    left: 8vmin;
 }
 
 main {
@@ -116,12 +137,13 @@ main>#home {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-family: "Macondo", serif;
 }
 
 main>#home>article>p {
     font-size: 5vmin;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: "Macondo", serif; */
 }
 
 main>#home>article>h1 {
@@ -129,8 +151,6 @@ main>#home>article>h1 {
     font-size: 8vmin;
     font-weight: bolder;
     text-shadow: 3px 3px 3px #ababab;
-    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 main>#home>div {
@@ -138,6 +158,7 @@ main>#home>div {
     width: 50vmin;
     height: 50vmin;
     background-image: url(https://i.gifer.com/TXOP.gif);
+    /* background-image: url(PORTO\ CONTENT/code-bg.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     transition: 1s;
@@ -154,19 +175,19 @@ main>#home>div:hover {
 }
 
 main>#home>article>button {
-    color: black;
-    background-color: aliceblue;
+    color: white;
+    background-color: royalblue;
     margin-top: 10px;
     transition: 1s;
-    border-top-right-radius: 25%;
-    border-bottom-left-radius: 25%;
+    /* border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%; */
     font-size: 4vmin;
     font-weight: bold;
+    cursor: grab;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 main>#home>article>button:hover {
-    color: white;
     background-color: red;
 }
 
@@ -175,7 +196,6 @@ main>#home>div>img {
     height: auto;
     max-width: 100%;
     transition: .5s;
-    /* right: 1vmax; */
     border-radius: 80%;
     right: 5%;
     bottom: 0;
@@ -183,10 +203,9 @@ main>#home>div>img {
 }
 
 main>#home>div>img:hover {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
     max-width: 100%;
-    transform: scale(1.2);
 }
 
 main>#about {
@@ -203,7 +222,6 @@ main>#about>p {
 main>#about>p>span {
     font-size: 5vmin;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     /* text-shadow: 2px 2px 2px #ababab; */
 }
 
@@ -263,33 +281,33 @@ main>#about>#about-btn-cont>div>img:hover {
 }
 
 main>#about>#about-btn>button {
-    color: black;
+    color: white;
     /* display: flex; */
     /* flex-direction: column; */
-    background-color: white;
+    background-color: royalblue;
     margin-top: 10px;
     transition: 1s;
     /* border-radius: 10%; */
-    border-top-right-radius: 20%;
-    border-bottom-left-radius: 20%;
+    /* border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%; */
     font-size: 4vmin;
     font-weight: bold;
+    cursor: grab;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 main>#about>#about-btn>button:hover {
-    color: white;
     background-color: red;
 }
 
 main>#about>#about-btn-cont>#about-btn-cont-p {
+    font-family: "Macondo", serif;
     width: 70%;
 }
 
 main>#about>#about-btn-cont>#about-btn-cont-p>ul>li {
     font-size: 5vmin;
     font-weight: 500;
-    font-family: "Macondo", serif;
     flex-wrap: wrap;
 }
 
@@ -325,29 +343,42 @@ main>#project>#project-cont {
     gap: 8vmin;
 }
 
+main>#project>#project-cont>div>h1 {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 1vmax;
+    font-family: "Macondo", serif;
+}
+
 main>#project>#project-cont>div {
-    width: 60vmin;
+    width: 65vmin;
     height: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: .8vmin solid red;
+    border: 1px solid royalblue;
     border-radius: 10%;
+    transition: all 1s ease-out;
+}
+
+main>#project>#project-cont>div:hover {
+    box-shadow: 0px 0px 5vmin rgb(63, 63, 63);
+    transform: scale(1.1);
 }
 
 main>#project>#project-cont>div>img {
-    width: 100%;
+    width: 80%;
     height: auto;
     margin: auto;
     max-width: 100%;
     border-radius: 10%;
     aspect-ratio: 1/.8;
-    transition: all 2s ease-out;
+    transition: all .4s ease-out;
 }
 
 main>#project>#project-cont>div>img:hover {
-    transform: scale(.8) translate(10%) rotate(10deg);
-    opacity: 0.6;
+    width: 90%;
 }
 
 main>#project>#project-cont>div>div {
@@ -362,10 +393,13 @@ main>#project>#project-cont>div>div>a {
     text-decoration: none;
     display: flex;
     justify-content: space-around;
+    /* border: 1px solid red; */
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
 }
 
 main>#project>#project-cont>div>div>a>img {
-    width: 40%;
+    width: 30%;
     height: auto;
     max-width: 100%;
     transition: 1.5s;
@@ -416,7 +450,9 @@ main>#skill>#skill-cont>div {
 }
 
 main>#skill>#skill-cont>div>p {
-    color: rgb(251, 255, 0);
+    font-size: 2vmax;
+    color: rgb(217, 255, 0);
+    background-color: #646464;
     font-weight: bold;
 }
 
@@ -465,7 +501,7 @@ main>#contact>#contact-cont>#contact-cont-img {
     width: 50vmin;
     height: 50vmin;
     position: relative;
-    background-color: rgb(197, 197, 197);
+    background-color: rgb(16, 0, 59);
     transition: 1s;
     border-radius: 100%;
 }
@@ -509,7 +545,6 @@ main>#contact>#contact-cont>#contact-cont-in>div {
 }
 
 main>#contact>#contact-cont>#contact-cont-in>div>label {
-    /* color: red; */
     color: white;
     font-size: 3.5vmin;
     font-weight: bold;
@@ -523,12 +558,12 @@ main>#contact>#contact-cont>#contact-cont-in>div>label {
 
 main>#contact>#contact-cont>#contact-cont-in>div>input,
 main>#contact>#contact-cont>#contact-cont-in>div>textarea {
+    color: white;
     padding: 1.3vmin;
     font-weight: 700;
     background-color: transparent;
-    color: white;
     outline: none;
-    background-color: rgb(87, 87, 87);
+    background-color: rgb(70, 70, 70);
 }
 
 main>#contact>#contact-cont>#contact-cont-in>div>input:focus+label,
@@ -546,18 +581,18 @@ main>#contact>#contact-cont>#contact-cont-in>div>textarea:focus {
 }
 
 main>#contact>#contact-cont>#contact-cont-in>div>button {
-    color: black;
-    background-color: aliceblue;
+    color: white;
+    background-color: royalblue;
     margin-top: 7px;
     /* border-radius: 10%; */
     transition: 1s;
     font-size: 4vmin;
+    cursor: grab;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 main>#contact>#contact-cont>#contact-cont-in>div>button:hover {
-    color: white;
     background-color: red;
 }
 
@@ -565,8 +600,6 @@ footer>p {
     text-align: center;
     font-size: 2vmin;
     font-weight: bolder;
-    text-shadow: 3px 3px 3px black;
-    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 

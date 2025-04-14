@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUMIT KUMAR PORT</title>
+    <link rel="shortcut icon" href="{% static 'other/favicon.png'%}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/index.css'%}">
-    <link rel="shortcut icon" href="{% static 'other/favicon.png' %}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Playwrite+GB+J+Guides:ital@0;1&display=swap"
@@ -23,37 +23,38 @@
     </script>
 </head>
 
-<body>
+<body id="body">
     <header>
         <!-- <p>SUMIT</p> -->
-        <img src="{% static 'other/logo.gif' %}" alt="logo">
+        <img loading="lazy" src="{% static 'other/SLEAF-Logo-animation-unscreen.gif'%}" id="head-img" alt="logo">
         <div>
             <nav>
-                <a href="#home">HOME</a>
+                <a href="#body">HOME</a>
                 <a href="#about">ABOUT</a>
                 <a href="#project">PROJECT</a>
                 <a href="#skill">SKILLS</a>
                 <a href="#contact">CONTACT</a>
             </nav>
-            <img src="{% static 'other/light.png' %}" alt="mode" id="mode">
+            <img loading="lazy" src="{% static 'other/light.png'%}" alt="mode" id="mode">
         </div>
     </header>
     <aside>
         <nav>
             <a href="https://leetcode.com/u/iamsumitkumar64/" target="_blank">
-                <img src="{% static 'other/leetcode-svgrepo-com.png' %}" alt="miss">
+                <img loading="lazy" src="{% static 'other/leetcode-svgrepo-com.png'%}" alt="miss" class="mode-img">
                 <p>LEETCODE</p>
             </a>
             <a href="https://github.com/iamsumitkumar64" target="_blank">
-                <img src="{% static 'other/github-142-svgrepo-com.png' %}" alt="miss">
+                <img loading="lazy" src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img">
                 <p>GITHUB</p>
             </a>
             <a href="https://www.linkedin.com/in/sumit-kumar999/" target="_blank">
-                <img src="{% static 'other/linkedin-sketched-logo-svgrepo-com.png' %}" alt="miss">
+                <img loading="lazy" src="{% static 'other/linkedin-sketched-logo-svgrepo-com.png'%}" alt="miss"
+                    class="mode-img">
                 <p>LINKEDIN</p>
             </a>
             <a href="mailto:iam.sumitkumar64@gmail.com">
-                <img src="{% static 'other/email-14-svgrepo-com.png' %}" alt="miss">
+                <img loading="lazy" src="{% static 'other/email-14-svgrepo-com.png'%}" alt="miss" class="mode-img">
                 <p>EMAIL</p>
             </a>
         </nav>
@@ -62,14 +63,14 @@
         <div id="home">
             <article>
                 <p>Hello,my name is</p>
-                <h1>SUMIT BIRWAL</h1>
+                <h1>SUMIT KUMAR</h1>
                 <p>I'm
                     <span id="element"></span>
                 </p>
                 <button id="resume">RESUME</button>
             </article>
             <div>
-                <img src="{% static 'other/me_code.png' %}" alt="mine-image">
+                <img loading="lazy" src="{% static 'other/me_code.png'%}" alt="mine-image">
             </div>
         </div>
         <div id="about">
@@ -85,7 +86,7 @@
             </div>
             <div id="about-btn-cont">
                 <div>
-                    <img src="{% static 'other/boy.png' %}" alt="miss">
+                    <img loading="lazy" src="{% static 'other/boy.png'%}" alt="miss">
                 </div>
                 <p id="about-btn-cont-p"></p>
             </div>
@@ -98,41 +99,93 @@
             </p>
             <div id="project-cont">
                 <div>
-                    <img src="{% static 'other/movie.jpg' %}" alt="movie">
+                    <h1>Movie App</h1>
+                    <img loading="lazy" src="{% static 'other/movie.jpg'%}" alt="movie">
                     <div>
                         <a href="https://github.com/iamsumitkumar64/MOVIE-APP" target="_blank"><img
-                                src="{% static 'other/github-142-svgrepo-com.png' %}" alt="miss"></a>
-                        <a href="https://birwal-movie.vercel.app" target="_blank"><img src="{% static 'other/eye.png' %}"
-                                alt="miss"></a>
-                        {% comment %} <a href="" target="_blank"><img src="{% static 'other/download.png' %}" alt="miss"></a> {% endcomment %}
+                                src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img"></a>
+                        <a href="https://birwal-movie.vercel.app/" target="_blank"><img loading="lazy"
+                                src="{% static 'other/eye.png'%}" alt="miss" class="mode-img"></a>
                     </div>
                 </div>
                 <div>
-                    <img src="{% static 'other/amazon.webp' %}" alt="movie">
+                    <h1>Amazon Clone</h1>
+                    <img loading="lazy" src="{% static 'other/amazon.webp'%}" alt="movie">
                     <div>
                         <a href="https://github.com/iamsumitkumar64/AMAZON-CLONE" target="_blank"><img
-                                src="{% static 'other/github-142-svgrepo-com.png' %}" alt="miss"></a>
-                        <a href="PROJECT 1 AMAZON/INDEX.html" target="_blank"><img src="{% static 'other/eye.png' %}"
-                                alt="miss"></a>
-                        {% comment %} <a href="" target="_blank"><img src="{% static 'other/download.png' %}" alt="miss"></a> {% endcomment %}
+                                src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img"></a>
+                        <a href="PROJECT 1 AMAZON/INDEX.html" target="_blank"><img loading="lazy"
+                                src="{% static 'other/eye.png'%}" alt="miss" class="mode-img"></a>
                     </div>
                 </div>
                 <div>
-                    <img src="{% static 'other/Rock-Paper-Scissor.webp' %}" alt="movie">
+                    <h1>Tic-Tac-Toe</h1>
+                    <img loading="lazy" src="{% static 'other/tic-tac-toe.png'%}" alt="movie">
                     <div>
-                        <a href="https://github.com/iamsumitkumar64/ROCK-PAPER-SCISSOR" target="_blank"><img src="{% static 'other/github-142-svgrepo-com.png' %}" alt="miss"></a>
-                        <a href="PROJECT 2 RPS/index.html" target="_blank"><img src="{% static 'other/eye.png' %}"
-                                alt="miss"></a>
-                        {% comment %} <a href="" target="blank"><img src="{% static 'other/download.png' %}"  alt="miss"></a> {% endcomment %}
+                        <a href="https://github.com/iamsumitkumar64/Tic-Tac-Toe.git" target="_blank"><img
+                                src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img"></a>
+                        <a href="https://birwal-tic-tac-toe.vercel.app/" target="_blank"><img loading="lazy"
+                                src="{% static 'other/eye.png'%}" alt="miss" class="mode-img"></a>
                     </div>
                 </div>
                 <div>
-                    <img src="{% static 'other/dictionary.webp' %}" alt="movie">
+                    <h1>Rock-Paper-Scissor</h1>
+                    <img loading="lazy" src="{% static 'other/Rock-Paper-Scissor.webp'%}" alt="movie">
                     <div>
-                        <a href="https://github.com/iamsumitkumar64/API-DICTIONARY" target="_blank"><img src="{% static 'other/github-142-svgrepo-com.png' %}" alt="miss"></a>
-                        <a href="PROJECT 3 DICTIONARY/index.html" target="_blank"><img src="{% static 'other/eye.png' %}"
-                                alt="miss"></a>
-                        {% comment %} <a href="" target="_blank"><img src="{% static 'other/download.png' %}"  alt="miss"></a> {% endcomment %}
+                        <a href="https://github.com/iamsumitkumar64/ROCK-PAPER-SCISSOR" target="_blank"><img
+                                src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img"></a>
+                        <a href="PROJECT 2 RPS/index.html" target="_blank"><img loading="lazy"
+                                src="{% static 'other/eye.png'%}" alt="miss" class="mode-img"></a>
+                    </div>
+                </div>
+                <div>
+                    <h1>Dictionary</h1>
+                    <img loading="lazy" src="{% static 'other/dictionary.webp'%}" alt="movie">
+                    <div>
+                        <a href="https://github.com/iamsumitkumar64/API-DICTIONARY" target="_blank"><img
+                                src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img"></a>
+                        <a href="PROJECT 3 DICTIONARY/index.html" target="_blank"><img loading="lazy"
+                                src="{% static 'other/eye.png'%}" alt="miss" class="mode-img"></a>
+                    </div>
+                </div>
+                <div>
+                    <h1>To-Do</h1>
+                    <img loading="lazy" src="{% static 'other/todo.png'%}" alt="movie">
+                    <div>
+                        <a href="https://github.com/iamsumitkumar64/TO-DO" target="_blank"><img
+                                src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img"></a>
+                        <a href="https://birwal-to-do.vercel.app" target="_blank"><img loading="lazy"
+                                src="{% static 'other/eye.png'%}" alt="miss" class="mode-img"></a>
+                    </div>
+                </div>
+                <div>
+                    <h1>Social-Media-Download</h1>
+                    <img loading="lazy" src="{% static 'other/socialmedia.png'%}" alt="movie">
+                    <div>
+                        <a href="https://github.com/iamsumitkumar64/Social-Media-Download" target="_blank"><img
+                                src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img"></a>
+                        <a href="PROJECT 10 SOCIAL/index.html" target="_blank"><img loading="lazy"
+                                src="{% static 'other/eye.png'%}" alt="miss" class="mode-img"></a>
+                    </div>
+                </div>
+                <div>
+                    <h1>Stop-Watch</h1>
+                    <img loading="lazy" src="{% static 'other/stopwatch.png'%}" alt="movie">
+                    <div>
+                        <a href="https://github.com/iamsumitkumar64/STOP-WATCH" target="_blank"><img
+                                src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img"></a>
+                        <a href="PROJECT 7 STOP_WATCH/index.html" target="_blank"><img loading="lazy"
+                                src="{% static 'other/eye.png'%}" alt="miss" class="mode-img"></a>
+                    </div>
+                </div>
+                <div>
+                    <h1>Quiz App</h1>
+                    <img loading="lazy" src="{% static 'other/quiz.png'%}" alt="movie">
+                    <div>
+                        <a href="https://github.com/iamsumitkumar64/Quiz-App.git" target="_blank"><img
+                                src="{% static 'other/github-142-svgrepo-com.png'%}" alt="miss" class="mode-img"></a>
+                        <a href="https://birwal-quiz.vercel.app/" target="_blank"><img loading="lazy"
+                                src="{% static 'other/eye.png'%}" alt="miss" class="mode-img"></a>
                     </div>
                 </div>
             </div>
@@ -145,43 +198,41 @@
             </p>
             <div id="skill-cont">
                 <div>
-                    <img src="{% static 'other/dsa.png' %}" alt="miss">
-                    <p>Data-Structure And Algorithm</p>
-                </div>
-                <div>
-                    <img src="{% static 'other/c++.png' %}" alt="miss">
+                    <img loading="lazy" src="{% static 'other/c++.png'%}" alt="miss">
                     <p>C++</p>
                 </div>
                 <div>
-                    <img src="{% static 'other/html.png' %}" alt="miss">
+                    <img loading="lazy" src="{% static 'other/dsa.png'%}" alt="miss">
+                    <p>DSA</p>
+                </div>
+                <div>
+                    <img loading="lazy" src="{% static 'other/html.png'%}" alt="miss">
                     <p>HTML</p>
                 </div>
                 <div>
-                    <img src="{% static 'other/css.png' %}" alt="miss">
+                    <img loading="lazy" src="{% static 'other/css.png'%}" alt="miss">
                     <p>CSS</p>
                 </div>
                 <div>
-                    <img src="{% static 'other/js.png' %}" alt="miss">
+                    <img loading="lazy" src="{% static 'other/js.png'%}" alt="miss">
                     <p>JavaScript</p>
                 </div>
                 <div>
-                    <img src="{% static 'other/py.png' %}" alt="miss">
+                    <img loading="lazy" src="{% static 'other/py.png'%}" alt="miss">
                     <p>Python</p>
                 </div>
                 <div>
-                    <img src="{% static 'other/dj.png' %}" alt="miss">
+                    <img loading="lazy" src="{% static 'other/dj.png'%}" alt="miss">
                     <p>Django</p>
                 </div>
                 <div>
-                    <img src="{% static 'other/mysql.png' %}" alt="miss">
+                    <img loading="lazy" src="{% static 'other/mongodb.png'%}" alt="miss">
+                    <p>MongDb</p>
+                </div>
+                <div>
+                    <img loading="lazy" src="{% static 'other/mysql.png'%}" alt="miss">
                     <p>MySQL</p>
-                </div> 
-                {% for x in skill_data %}
-                    <div>
-                        <img src="media/{{x.skill_img}}" alt="miss">
-                        <p>{{x.skill_name}}</p>
-                    </div>
-                {% endfor %}
+                </div>
             </div>
         </div>
         <div id="contact">
@@ -193,24 +244,23 @@
             </p>
             <div id="contact-cont">
                 <div id="contact-cont-img">
-                    <img src="{% static 'other/contact.png' %}" alt="miss">
+                    <img loading="lazy" src="{% static 'other/contact.gif'%}" alt="miss">
                 </div>
-                <form onsubmit="SendMail()"  method="POST" action="{% url 'tap' %}" id="contact-cont-in">
-                    {% csrf_token %}
+                <form id="contact-cont-in" onsubmit="event.preventDefault(); SendMail();">
                     <div>
-                        <input type="text" name="name" placeholder="" required draggable="true" class="form">
+                        <input type="text" placeholder="" required draggable="true" class="form">
                         <label for="full-name">NAME</label>
                     </div>
                     <div>
-                        <input type="text" name="email" placeholder="" required draggable="true" class="form">
+                        <input type="text" placeholder="" required draggable="true" class="form">
                         <label for="email">EMAIL</label>
                     </div>
                     <div>
-                        <input type="text" name="mobile" placeholder="" draggable="true" class="form">
+                        <input type="text" placeholder="" draggable="true" class="form">
                         <label for="mobile">MOBILE</label>
                     </div>
                     <div>
-                        <textarea rows="5" name="message" cols="" placeholder="" required draggable="true" class="form"></textarea>
+                        <textarea rows="5" cols="" placeholder="" required draggable="true" class="form"></textarea>
                         <label for="message">YOUR MESSAGE</label>
                     </div>
                     <div>
@@ -236,10 +286,10 @@
         loop: true,
         showCursor: true,
         // cursorChar: '@',
-        cursorChar: '<span style="font-size: 4.5vmin; color: rgb(255, 255, 255);">@</span>',
+        cursorChar: '<span style="font-size: 4.5vmin; color: rgb(0, 255, 106);">@</span>',
         autoInsertCss: true,
     });
 </script>
-<script src="{% static 'js/index.js'%}"></script>
+<script src="{% static 'js/index.js' %}"></script>
 
 </html>

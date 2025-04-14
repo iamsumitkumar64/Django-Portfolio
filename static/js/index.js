@@ -6,24 +6,58 @@ document.addEventListener('keydown', function (e) {
 document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
 });
+let modeimg = document.querySelectorAll('.mode-img');
 let mode = document.getElementById("mode");
 let body = document.body;
+const lightImageUrl = "{% static 'other/light.png' %}";
+const nightImageUrl = "{% static 'other/night.png' %}";
 mode.addEventListener("click", () => {
-    if (mode.getAttribute("src") == "static/other/night.png") {
-        mode.src = "static/other/light.png";
-        body.setAttribute("style", "color:white;background-color: rgb(1, 0, 26);");
-        document.querySelectorAll("a").forEach(a => a.setAttribute("style", "color:white;"));
+    console.log(mode.src);
+    if (mode.src.includes(lightImageUrl)) {
+        mode.src = nightImageUrl;
+        mode.setAttribute("style", "filter:invert(100%) brightness(0);");
+        body.setAttribute("style", "color:black; background-color:rgb(236, 236, 236);");
+        document.getElementsByTagName('header')[0].setAttribute("style", "color:black; background-color:rgb(236, 236, 236);");
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.setAttribute("style", "color:black;");
+            link.addEventListener("mouseenter", () => {
+                link.setAttribute("style", "color:red;");
+            })
+            link.addEventListener("mouseleave", () => {
+                link.setAttribute("style", "color:black;");
+            })
+        });
+        document.getElementById('head-img').setAttribute("style", "filter:invert(100%) brightness(0);");
+        modeimg.forEach(img => {
+            img.setAttribute("style", "filter:invert(100%) brightness(0);");
+        });
     } else {
-        mode.src = "static/other/night.png";
-        body.setAttribute("style", "color:black; background-color:rgb(129, 129, 129);");
-        document.querySelectorAll("a").forEach(a => a.setAttribute("style", "color:black;"));
+        mode.src = lightImageUrl;
+        mode.setAttribute("style", "filter:invert(100%);");
+        body.setAttribute("style", "color:white;background-color: rgb(1, 0, 26);");
+        document.getElementsByTagName('header')[0].setAttribute("style", "color:white;background-color: rgb(1, 0, 26);");
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.setAttribute("style", "color:white;");
+            link.addEventListener("mouseenter", () => {
+                link.setAttribute("style", "color:yellow;");
+            })
+            link.addEventListener("mouseleave", () => {
+                link.setAttribute("style", "color:white;");
+            })
+        });
+        document.getElementById('head-img').setAttribute("style", "filter:invert(100%);");
+        modeimg.forEach(img => {
+            img.setAttribute("style", "filter:invert(100%);");
+        });
     }
 });
 let about_btn = document.getElementsByClassName("about-btns");
 console.log(about_btn);
 let para = document.getElementById("about-btn-cont-p");
 para.innerHTML = `  <ul>
- <li> Hello! My name is Sumit Birwal & I enjoy creating things that live on the internet.</li></br><li>I'm a passionate Developer, with strong administrative & communication skills, good attention to detail & the ability to write efficient code.</li></br>
+ <li> Hello! My name is Sumit Kumar & I enjoy creating things that live on the internet.</li></br><li>I'm a passionate Developer, with strong administrative & communication skills, good attention to detail & the ability to write efficient code.</li></br>
  <li>I have done Full-Stack Development in Django from Youtube.</li></br>
  <li>I have done 120+ LeetCode Problems with C++ and Python.</li>
 </ul>`;
@@ -33,7 +67,7 @@ window.addEventListener("scroll", () => {
         about_btn[0].addEventListener("click", () => {
             let para = document.getElementById("about-btn-cont-p");
             para.innerHTML = `  <ul>
-             <li> Hello! My name is Sumit Birwal & I enjoy creating things that live on the internet.</li></br> <li>I'm a passionate Developer, with strong administrative & communication skills, good attention to detail & the ability to write efficient code.</li></br>
+             <li> Hello! My name is Sumit Kumar & I enjoy creating things that live on the internet.</li></br> <li>I'm a passionate Developer, with strong administrative & communication skills, good attention to detail & the ability to write efficient code.</li></br>
              <li>I have done Full-Stack Development in Django from Youtube.</li></br>
              <li>I have done 120+ LeetCode Problems with C++ and Python.</li>
          </ul>`;
@@ -52,8 +86,8 @@ window.addEventListener("scroll", () => {
         console.error("No elements found with the class name 'about-btns'.");
     }
 });
-function SendMail(event) {
-    event.preventDefault();
+
+function SendMail() {
     var params = {
         from_name: document.getElementsByClassName("form")[0].value,
         email_id: document.getElementsByClassName("form")[1].value,
@@ -66,13 +100,11 @@ function SendMail(event) {
         console.error("Failed to send email:", error);
     });
 }
-// document.getElementById("myForm").addEventListener("submit", SendMail);
+
 document.getElementById("resume").addEventListener("click", () => {
-    const pdfUrl = "static/other/My Resume.pdf";
+    const pdfUrl = 'PORTO CONTENT/My Resume.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
-    link.download = '';
-    document.body.appendChild(link);
+    link.download = 'Sumit Kumar Resume.pdf';
     link.click();
-    document.body.removeChild(link);
 });

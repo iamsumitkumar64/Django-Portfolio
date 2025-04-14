@@ -9,13 +9,13 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-from dotenv import load_dotenv
 from pathlib import Path
 import os
 # VERECL USE MYSQL
 import pymysql
 pymysql.install_as_MySQLdb()
 
+from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv()
@@ -133,10 +133,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')   # This is where collectstatic will collect static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles','static')  # This is where collectstatic will collect static files
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static'),  # This should not include STATIC_ROOT
+    os.path.join(BASE_DIR, 'static'),  # This should not include STATIC_ROOT
 ]
 
 # Default primary key field type
@@ -144,5 +144,6 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')  
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
